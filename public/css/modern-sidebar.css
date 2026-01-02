@@ -1,0 +1,151 @@
+/* Modern Sidebar Enhancements */
+
+/* Smooth Scrollbar */
+.modern-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modern-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modern-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(116, 36, 169, 0.3);
+    border-radius: 10px;
+}
+
+.modern-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(116, 36, 169, 0.5);
+}
+
+/* Sidebar Animations */
+.modern-sidebar {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Sidebar Links Hover Effects */
+.sidebar-nav-link,
+.sidebar-dropdown-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-nav-link::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav-link:hover::before,
+.sidebar-nav-link.active::before {
+    transform: scaleY(1);
+}
+
+/* Badge Animation */
+.sidebar-nav-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Mobile Overlay */
+.sidebar-overlay {
+    backdrop-filter: blur(5px);
+}
+
+.sidebar-overlay.active {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dropdown Arrow Rotation */
+.sidebar-dropdown-toggle i:last-child {
+    transition: transform 0.3s ease;
+}
+
+/* Top Mini Header Enhancements */
+.top-mini-header {
+    backdrop-filter: blur(10px);
+}
+
+/* Content Wrapper Smooth Transition */
+.content-wrapper {
+    transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 991px) {
+    .modern-sidebar.active {
+        animation: slideInFromRight 0.3s ease-out;
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+}
+
+/* Accessibility - Focus States */
+.sidebar-nav-link:focus,
+.sidebar-dropdown-toggle:focus,
+.dark-mode-toggle-btn:focus,
+.sidebar-toggle-mobile:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Print Styles - Hide Sidebar */
+@media print {
+    .modern-sidebar,
+    .sidebar-toggle-mobile,
+    .sidebar-overlay,
+    .top-mini-header {
+        display: none !important;
+    }
+
+    .content-wrapper {
+        margin-right: 0 !important;
+    }
+
+    main {
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+}

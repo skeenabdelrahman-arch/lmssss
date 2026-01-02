@@ -1,0 +1,127 @@
+/*
+Template:  Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template
+Author: potenzaglobalsolutions.com
+Design and Developed by: potenzaglobalsolutions.com
+Version : 1.0
+
+NOTE: This file includes all admin Template plugins and Shortcodes. If you don't want to use any plugins from below. You can simply remove that line from this file.
+*/
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+1. Plugins (all the plugins css)
+2. Variables
+3. Mixins
+4. Helpers
+5. Typography
+6. Components
+	- Accordion
+	- Button
+	- Lists
+	- Nice Select
+	- Pricing
+	- Social Icon
+	- Tabs
+	- Owl Carousel
+7. Sidebar
+8. Layout
+9. Responsive
+
+======================================
+[ End table content ]
+======================================*/
+
+@import "plugins/bootstrap";
+@import "plugins/bootstrap-colorpicker";
+@import "plugins/bootstrap-touchspin";
+@import "plugins/fullcalendar";
+@import "plugins/jquery-jvectormap";
+@import "plugins/simplemde";
+@import "plugins/summernote";
+@import "plugins/weather-icons";
+@import "plugins/themify-icons";
+@import "plugins/font-awesome";
+@import "plugins/toastr";
+@import "plugins/bootstrap-datepicker";
+@import "plugins/jquery.steps";
+@import "plugins/dataTables.bootstrap4";
+@import "plugins/lobilist";
+@import "plugins/semantic";
+
+@import "variables";
+@import "mixins";
+@import "helpers";
+@import "typography";
+
+@import "components/accordion";
+@import "components/button";
+@import "components/list-style";
+@import "components/nice-select";
+@import "components/pricing";
+@import "components/social-icon";
+@import "components/tabs";
+@import "components/owl-carousel";
+
+@import "sidebar";
+@import "layout";
+@import "responsive";
+
+// Custom styles for enhanced design
+.sidebar {
+	background-color: #2c3e50;
+	color: #ecf0f1;
+	font-family: 'Poppins', sans-serif;
+}
+
+.sidebar .nav>li>a {
+	color: #ecf0f1;
+	padding: 15px 20px;
+	transition: background-color 0.3s ease;
+}
+
+.sidebar .nav>li>a:hover {
+	background-color: #34495e;
+	color: #ffffff;
+}
+
+.sidebar .nav>li.active>a {
+	background-color: #2980b9;
+	color: #ffffff;
+}
+
+.preloader-image {
+	width: 50px;
+	height: 50px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.content-wrapper {
+	flex: 1;
+	padding: 20px;
+	background-color: #f8f9fa;
+}
+
+footer {
+	background-color: #ffffff;
+	padding: 10px 20px;
+	text-align: center;
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
